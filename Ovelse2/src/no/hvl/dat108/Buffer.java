@@ -13,7 +13,7 @@ import java.util.concurrent.Semaphore;
  */
 public class Buffer {
 
-	private final static int SIZE = 2;
+	private final static int SIZE = 10;
 	private LinkedList<Integer> buffer = new LinkedList<Integer>();
 
 	/**
