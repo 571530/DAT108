@@ -1,4 +1,4 @@
-package no.hvl.dat108;
+package oppgave2;
 
 import java.util.LinkedList;
 import java.util.concurrent.Semaphore;
