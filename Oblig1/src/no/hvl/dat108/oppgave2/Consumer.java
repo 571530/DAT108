@@ -1,4 +1,4 @@
-package oppgave2;
+package no.hvl.dat108.oppgave2;
 
 /**
  * A consumer that consumes items and remove items from a shared buffer. The

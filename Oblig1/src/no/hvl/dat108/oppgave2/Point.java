@@ -1,4 +1,4 @@
-package oppgave2;
+package no.hvl.dat108.oppgave2;
 
 /**
  * Defines a point in a 2D Euclidean space.

@@ -1,4 +1,4 @@
-package oppgave2;
+package no.hvl.dat108.oppgave2;
 
 public class Main {
 	public static void main(String[] args) {
