@@ -51,32 +51,33 @@ public class Oppgave4 {
 		
 		//OPPGAVE C
 		int gjennomsnittlonnForKvinner = (int) liste
-				    .stream()
-				    .filter(p -> p.getKjønn() == 'K')
-				    .mapToInt(Ansatt::getAarslonn)
-				    .average().getAsDouble();
+				.stream()
+				.filter(p -> p.getKjønn() == 'K')
+				.mapToInt(Ansatt::getAarslonn)
+				.average().getAsDouble();
 		System.out.printf("\nGjennomsnittslønn for kvinner %d\n", gjennomsnittlonnForKvinner);
 		
 		
 		// OPPGAVE D
 		liste.stream()
-			.filter(a -> a.getStilling() == "Sjef")
-			.forEach(a -> a.endreLønn(prosentTillegg(7)));
+				.filter(a -> a.getStilling() == "Sjef")
+				.forEach(a -> a.endreLønn(prosentTillegg(7)));
 		System.out.println("Liste etter sjefer går opp i lønn");
 		liste.stream().forEach(a -> System.out.println(a));
 		
 		// OPPGAVE E
 		boolean merEnn800k = liste.stream()
-								.filter(a -> a.getAarslonn() > 800000)
-								.count() > 0;
-		System.out.printf("\nEr det noen som tjener mer enn 800000kr? %b", merEnn800k);
+				.filter(a -> a.getAarslonn() > 800000)
+				.count() > 0;
+		System.out.printf("\nEr det noen som tjener mer enn 800000kr? %b\n", merEnn800k);
 			
 		// OPPGAVE F
 		liste.stream().forEach(a -> System.out.println(a));
 	
 		// OPPGAVE G
-		Ansatt ansattMedLavestLonn = liste.stream().min((a, b) -> a.getAarslonn() - b.getAarslonn()).get();
-		System.out.printf("Personen med minste lønn er : %s\n", ansattMedLavestLonn);
+		int lavesteLonn = liste.stream().min((a, b) -> a.getAarslonn() - b.getAarslonn()).get().getAarslonn();
+		System.out.println("Ansatte med minste lønn");
+		liste.stream().filter(a -> a.getAarslonn() == lavesteLonn).forEach(System.out::println);
 		
 		// OPPGAVE H
 		int sum = IntStream.range(1, 1000).filter(x -> x % 3 == 0 || x % 5 == 0).sum();
