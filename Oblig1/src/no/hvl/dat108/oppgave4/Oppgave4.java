@@ -60,7 +60,7 @@ public class Oppgave4 {
 		
 		// OPPGAVE D
 		liste.stream()
-				.filter(a -> a.getStilling() == "Sjef")
+				.filter(a -> a.getStilling().equals("Sjef"))
 				.forEach(a -> a.endreLønn(prosentTillegg(7)));
 		System.out.println("Liste etter sjefer går opp i lønn");
 		liste.stream().forEach(a -> System.out.println(a));
