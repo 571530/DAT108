@@ -10,37 +10,38 @@
 	href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
 <title>Påmelding</title>
 </head>
+<script defer src="${pageContext.request.contextPath}/javascript/script.js"></script>
 <body>
 	<h2>Påmelding</h2>
 	<form method="post" class="pure-form pure-form-aligned">
 		<fieldset>
 			<div class="pure-control-group">
 				<label for="fornavn">Fornavn:</label> <input type="text"
-					name="fornavn" value="${skjema.fornavn}" /> <font color="red"
+					name="fornavn" id="fornavn" onkeyup="updateFornavn();" value="${skjema.fornavn}" /> <font id="fornavnFeil" color="red"
 					${skjema.fornavn != "" ? "hidden" : "visible" }>Ugyldig
 					fornavn, må starte med stor bokstav og kun inneholde bokstaver</font>
 			</div>
 			<div class="pure-control-group">
 				<label for="etternavn">Etternavn:</label> <input type="text"
-					name="etternavn" value="${ skjema.etternavn }" /> <font
-					color="red" ${skjema.etternavn != "" ? "hidden" : "visible" }>Ugyldig
+					name="etternavn" id="etternavn" onkeyup="updateEtternavn();" value="${ skjema.etternavn }" /> <font
+					color="red" id="etternavnFeil" ${skjema.etternavn != "" ? "hidden" : "visible" }>Ugyldig
 					etternavn, må starte med stor bokstav og kun inneholde bokstaver</font>
 			</div>
 			<div class="pure-control-group">
 				<label for="mobil">Mobil (8 siffer):</label> <input type="text"
-					name="mobil" value="${skjema.mobil}" /> <font color="red"
+					name="mobil" id="mobil" onkeyup="updateMobil();" value="${skjema.mobil}" /> <font color="red" id="mobilFeil"
 					${skjema.mobil != "" ? "hidden" : "visible" }>Ugyldig mobil, 8 siffer uten noe mellomrom</font>
 			</div>
 			<div class="pure-control-group">
 				<label for="password">Passord:</label> <input type="password"
-					name="passord" value="" /> <font color="red"
+					name="passord" id="passord" onkeyup="updatePassord();"  value="" /> <font color="red" id="passordFeil"
 					${skjema.passordGyldig != false ? "hidden" : "visible" }>Ugyldig
 					passord, minimum 5 tegn</font>
 			</div>
 			<div class="pure-control-group">
 				<label for="passordRepetert">Passord repetert:</label> <input
-					type="password" name="passordRepetert" value="" /> <font
-					color="red"
+					type="password" id="passordRepetert" onkeyup="updatePassordRepetert();" name="passordRepetert" value=""/> <font
+					color="red" id="passordRepetertFeil"
 					${skjema.passordRepetert != false ? "hidden" : "visible" }>Passordene
 					må være like</font>
 			</div>

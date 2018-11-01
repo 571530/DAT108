@@ -28,7 +28,7 @@ public class Deltagerliste extends HttpServlet {
 		} else {
 			request.setAttribute("deltagere",
 					deltagerEAO.hentDeltagere().stream()
-							.sorted(Comparator.comparing(Deltager::getEtternavn).thenComparing(Deltager::getFornavn))
+							.sorted(Comparator.comparing(Deltager::getFornavn).thenComparing(Deltager::getEtternavn))
 							.collect(Collectors.toList()));
 
 			request.getRequestDispatcher("WEB-INF/deltagerliste.jsp").forward(request, response);
