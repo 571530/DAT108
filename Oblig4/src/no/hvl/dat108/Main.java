@@ -29,14 +29,12 @@ public class Main {
 		graf.nyKant(n4, n6, 4, true);
 		graf.nyKant(n5, n6, 2, true);
 		
-		
-		
 		for (Node n : graf.breddeForst(n1)) {
 			System.out.println(n.getNavn());
 		}
 		
 		for (Kant k : graf.prims()) {
-			System.out.println(k.getStart().getNavn() + ", " + k.getSlutt().getNavn());
+			System.out.println(k.getStart().getNavn() + " -> " + k.getSlutt().getNavn());
 		}
 	}
 }

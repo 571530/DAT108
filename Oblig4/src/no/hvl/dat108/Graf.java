@@ -65,12 +65,11 @@ public class Graf {
 			ubesokteNoder.remove(0);
 			if (!noder.contains(node)) {
 				ubesokteNoder.addAll(node.getKanter().stream()
-										.map(x -> x.getSlutt())
-										.collect(Collectors.toList()));
+						.map(x -> x.getSlutt())
+						.collect(Collectors.toList()));
 				noder.add(node);
 			}
 		}
-		
 		
 		return noder;
 	}
@@ -85,7 +84,7 @@ public class Graf {
 	 */
 	public void fjernNode(Node node) {
 		noder.remove(node); 
-		noder.stream().forEach(n -> n.getKanter().stream().filter(k -> !k.getSlutt().equals(n)));
+		noder.stream().forEach(n -> n.getKanter().removeIf(k -> k.getSlutt().equals(node)));
 	}
 	
 	public void nyKant(Node node1, Node node2, int vekt, boolean beggeVeier) {
